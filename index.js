@@ -8,7 +8,10 @@ const userRoutes = require('./routes/auth');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://sashakt.vercel.app/',
+  credentials: true,
+}));
 app.use(bodyParser.json());
 
 // Database connection setup
